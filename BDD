@@ -1,0 +1,54 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: users
+#------------------------------------------------------------
+
+CREATE TABLE users(
+        id_user     Int  Auto_increment  NOT NULL ,
+        pseudo_user Varchar (20) NOT NULL ,
+        mail_user   Varchar (60) NOT NULL ,
+        mdp_user    Varchar (20) NOT NULL ,
+        nom_useer   Varchar (30) NOT NULL ,
+        prenom_user Varchar (20) NOT NULL ,
+        img_user    Varchar (20)
+	,CONSTRAINT users_PK PRIMARY KEY (id_user)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: todo
+#------------------------------------------------------------
+
+CREATE TABLE todo(
+        id_todo          Int  Auto_increment  NOT NULL ,
+        description_todo Varchar (100) NOT NULL ,
+        dateDebut_todo   Varchar (10) NOT NULL ,
+        heureDebut_todo  Varchar (5) NOT NULL ,
+        dateFin_todo     Varchar (10) NOT NULL ,
+        heureFin_todo    Varchar (10) NOT NULL ,
+        id_user          Int NOT NULL
+	,CONSTRAINT todo_PK PRIMARY KEY (id_todo)
+
+	,CONSTRAINT todo_users_FK FOREIGN KEY (id_user) REFERENCES users(id_user)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Favori
+#------------------------------------------------------------
+
+CREATE TABLE Favori(
+        id_fav  Int  Auto_increment  NOT NULL ,
+        nom_fav Varchar (20) NOT NULL ,
+        img_fav Varchar (20) ,
+        url_fav Text NOT NULL ,
+        id_user Int NOT NULL
+	,CONSTRAINT Favori_PK PRIMARY KEY (id_fav)
+
+	,CONSTRAINT Favori_users_FK FOREIGN KEY (id_user) REFERENCES users(id_user)
+)ENGINE=InnoDB;
+
