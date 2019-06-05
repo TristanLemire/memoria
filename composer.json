@@ -1,0 +1,15 @@
+{
+    "name": "lemire-hetic/memoria",
+    "authors": [
+        {
+            "name": "TristanLemire",
+            "email": "tristan.lemire.sio@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Entity\\": "entity/"
+        }
+    },
+    "require": {}
+}

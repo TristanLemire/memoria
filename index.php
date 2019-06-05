@@ -10,5 +10,13 @@
 </head>
 <body>
   <h1>Welcome to Memoria</h1>
+  <form action="./controller/connect.php" method="post">
+    <label for="pseudo">Pseudo:</label>
+    <input type="text" name="pseudo" id="pseudo">
+    <label for="mdp">Mot de passe:</label>
+    <input type="password" name="mdp" id="mdp">
+    <input type="submit" value="Connexion" name="connexion">
+    <a href="./view/inscription.php">Inscription</a>
+  </form>
 </body>
 </html>
